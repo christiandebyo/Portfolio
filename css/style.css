@@ -111,7 +111,7 @@ body {
 footer {
     background-color: #A59C94FF;
     color: #a8005b;
-    padding: 40px 60px;
+    padding: 40px 100px;
 }
 
 footer span {
@@ -119,3 +119,4 @@ footer span {
     color: white;
     font-size: 25px;
 }
+
