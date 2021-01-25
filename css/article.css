@@ -1,4 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 #article-showcase {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    padding: 30px 300px;
+    margin: auto;
+}
+
+#main-article h1 {
+    padding: 20px 0px;
+}
+
+#main-article p {
+    line-height: 1.5em;
+    padding-bottom: 10px;
+    text-align: justify;
+    padding: 20px 0px;
+    font-size: 18px;
+}
+
+#main-article img {
+    width: 100%;
+    position: relative;
 }
