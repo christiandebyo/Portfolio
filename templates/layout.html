@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/article.css') }}">
+    <title>CatchUp with Tech</title>
+</head>
+<body>
+<!-- Start of navbar -->
+    <div class="navbar-container">
+
+        <div class="navbar-logo">
+            <p>CatchUp with <span>TECH</span></p>
+        </div>
+
+        <div class="navbar-items">
+            <a href="index.html">Home</a>
+            <a href="#">About</a>
+            <a href="#">Categories</a>
+            <a href="#">Contact Us</a>
+        </div>
+        
+    </div>
+<!-- End of navbar -->
+
+    {% block content %} {% endblock %}
+
+<!-- Start of footer -->
+    <footer>
+        <p>
+            CatchUp with <span>TECH</span> | Built not Bought
+        </p>
+        <p>
+            &copy 2021 All Right Reserved
+        </p>
+    </footer>
+<!-- End of footer -->
+</body>
+</html>

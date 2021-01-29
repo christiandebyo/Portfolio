@@ -1,29 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/article.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <title>CatchUp with Tech</title>
-</head>
-<body>
-
-    <div class="navbar-container">
-
-        <div class="navbar-logo">
-            <p>CatchUp with <span>TECH</span></p>
-        </div>
-
-        <div class="navbar-items">
-            <a href="index.html">Home</a>
-            <a href="#">About</a>
-            <a href="#">Categories</a>
-            <a href="#">Contact Us</a>
-        </div>
-        
-    </div>
-    
+{% extends 'layout.html' %}
+{% block content %} 
     
     <div id="article-showcase">
         
@@ -42,19 +18,4 @@
             <p>Box 2</p>
         </div> -->
         
-    </div>
-    
-
-    <!-- <div style="margin: 500px;"></div> -->
-
-
-    <footer>
-        <p>
-            CatchUp with <span>TECH</span> | Built not Bought
-        </p>
-        <p>
-            &copy 2021 All Right Reserved
-        </p>
-    </footer>
-</body>
-</html>
+{% endblock content %}
