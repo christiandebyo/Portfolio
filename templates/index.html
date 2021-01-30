@@ -1,21 +1,23 @@
 {% extends 'layout.html' %}
 {% block content %}
-    <div class="main-showcase">
 
-        <div class="main-container">
-            <h1>Heading One</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas eum aut distinctio dolor facilis, vitae repudiandae sapiente, expedita molestiae est delectus impedit magni esse cumque ex recusandae voluptate. Quidem ex unde temporibus consequuntur quaerat mollitia atque deserunt ad eum accusamus officiis error, ab alias non in porro tenetur odio totam!</p>
-            <a href="article.html"><button type="button">Read more</button></a>
+    {% for post in posts %}
+        <div class="main-showcase">
 
+            <div class="main-container">
+                <h1>{{ post.title }}</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas eum aut distinctio dolor facilis, vitae repudiandae sapiente, expedita molestiae est delectus impedit magni esse cumque ex recusandae voluptate. Quidem ex unde temporibus consequuntur quaerat mollitia atque deserunt ad eum accusamus officiis error, ab alias non in porro tenetur odio totam!</p>
+                <a href="article.html"><button type="button">Read more</button></a>
+
+            </div>
+
+            <div class="main-image">
+                <img src="https://placeimg.com/640/480/tech" alt="A picture of a tech.">
+            </div>
+            
         </div>
-
-        <div class="main-image">
-            <img src="https://placeimg.com/640/480/tech" alt="A picture of a tech.">
-        </div>
-
-    </div>
-
-
+    {% endfor %}
+    
     <div class="article-container">
             <h1>Topics</h1>
 
