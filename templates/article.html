@@ -1,21 +1,19 @@
 {% extends 'layout.html' %}
 {% block content %} 
-    
-    <div id="article-showcase">
-        
-        <div id="main-article">
-            <h1>Header One</h1>
+    {% for post in posts %}
+        <div id="article-showcase">
+            
+            <div id="main-article">
+                <h1>{{ post.title }}</h1>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit veritatis officiis officia at commodi magni quidem quaerat enim libero sed rem, nisi recusandae similique non ipsam praesentium quasi mollitia eos eligendi, odio vitae animi incidunt cumque. Distinctio ut voluptatibus error officia provident aliquam similique consectetur animi possimus. Harum, voluptatibus enim?</p>
+                <p>{{ post.content }}</p>
 
-            <img src="https://placeimg.com/640/480/any" alt="">
+                <img src="https://placeimg.com/640/480/any" alt="">
 
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste corporis inventore harum neque sed repellat esse ad incidunt, quis vero error magni iure soluta veritatis, quam accusantium impedit debitis explicabo quod culpa laudantium sapiente voluptatibus. Impedit voluptas fuga voluptatibus eos nostrum commodi dicta earum tempore, eaque at. Non, alias at.</p>
+                <p>{{ post.content }}</p>
 
+            </div>
+            
         </div>
-<!-- 
-        <div id="main-banner">
-            <p>Box 2</p>
-        </div> -->
-        
+    {% endfor %}    
 {% endblock content %}

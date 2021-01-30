@@ -18,7 +18,7 @@ def index():
 
 @app.route('/article')
 def article():
-    return render_template('article.html')
+    return render_template('article.html', posts=posts)
 
 if __name__ == '__main__':
     app.run(debug=True)
