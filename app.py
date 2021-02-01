@@ -15,6 +15,8 @@ posts = [
     }
 ]
 
+
+
 @app.route('/')
 @app.route('/home')
 def index():
@@ -23,6 +25,10 @@ def index():
 @app.route('/article')
 def article():
     return render_template('article.html', posts=posts)
+
+# @app.route('/editor')
+# def editor():
+#     return render_template('editor.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
