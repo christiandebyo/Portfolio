@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db' # temp db details here (sqlite)
@@ -15,6 +16,16 @@ posts = [
     }
 ]
 
+
+class Posts(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(50), nullable=False)
+    content = db.Column(db.Text(500), nullable=False)
+    date_created = db.Column(db.DateTime, nullable=False,
+        default=datetime.utcnow)
+    
+    def __repr__(self):
+        return f'{self.title}'
 
 
 @app.route('/')
