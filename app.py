@@ -21,8 +21,7 @@ class Posts(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(50), nullable=False)
     content = db.Column(db.Text(500), nullable=False)
-    date_created = db.Column(db.DateTime, nullable=False,
-        default=datetime.utcnow)
+    date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     
     def __repr__(self):
         return f'{self.title}'
@@ -33,8 +32,9 @@ class Posts(db.Model):
 def index():
     return render_template('index.html', posts=posts)
 
-@app.route('/article')
-def article():
+@app.route('/article/<int:id>')
+def article(id):
+    posts = User.query.get(id=id).first_or_404()
     return render_template('article.html', posts=posts)
 
 # @app.route('/editor')
