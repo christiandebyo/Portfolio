@@ -20,6 +20,7 @@ posts = [
 class Posts(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(50), nullable=False)
+    image_file = db.Column(db.String(50), nullable=False)
     content = db.Column(db.Text(500), nullable=False)
     date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     
@@ -37,9 +38,9 @@ def article(id):
     posts = User.query.get(id=id).first_or_404()
     return render_template('article.html', posts=posts)
 
-# @app.route('/editor')
-# def editor():
-#     return render_template('editor.html')
+@app.route('/summernote')
+def summernote():
+    return render_template('summernote.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
