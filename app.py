@@ -35,7 +35,6 @@ def index():
 
 @app.route('/article/<int:id>')
 def article(id):
-    posts = User.query.get(id=id).first_or_404()
     return render_template('article.html', posts=posts)
 
 @app.route('/summernote')
