@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -19,9 +19,7 @@ posts = [
 
 class Posts(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(50), nullable=False)
-    image_file = db.Column(db.String(50), nullable=False)
-    content = db.Column(db.Text(500), nullable=False)
+    content = db.Column(db.Text(), nullable=False)
     date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     
     def __repr__(self):
@@ -33,12 +31,16 @@ class Posts(db.Model):
 def index():
     return render_template('index.html', posts=posts)
 
-@app.route('/article/<int:id>')
-def article(id):
-    return render_template('article.html', posts=posts)
+# @app.route('/article/<int:id>')
+# def article(id):
+#     return render_template('article.html', posts=posts)
 
-@app.route('/summernote')
+@app.route('/summernote', methods = ['GET', 'POST'])
 def summernote():
+    if request.method == 'POST':
+        posts = Posts(content = request.form['editordata'])
+        db.session.add(posts)
+        db.session.commit()
     return render_template('summernote.html')
 
 if __name__ == '__main__':
