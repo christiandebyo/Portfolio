@@ -31,9 +31,9 @@ class Posts(db.Model):
 def index():
     return render_template('index.html', posts=posts)
 
-# @app.route('/article/<int:id>')
-# def article(id):
-#     return render_template('article.html', posts=posts)
+@app.route('/article')
+def article():
+    return render_template('article.html', posts=posts)
 
 @app.route('/summernote', methods = ['GET', 'POST'])
 def summernote():
