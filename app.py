@@ -43,5 +43,6 @@ def summernote():
         db.session.commit()
     return render_template('summernote.html')
 
+
 if __name__ == '__main__':
     app.run(debug=True)
